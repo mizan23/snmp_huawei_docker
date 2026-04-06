@@ -29,9 +29,9 @@ DB_CONFIG = {
     "password": os.getenv("DB_PASSWORD"),
 }
 
-SNMP_USER = "snmpuser"
-AUTH_KEY = "Fiber@Huawei@9800"
-PRIV_KEY = "Fiber@Huawei@9800"
+SNMP_USER = "your_snmp_username_from_huawei_NCE"
+AUTH_KEY = "your_auth_key_from_huawei_NCE"
+PRIV_KEY = "your_private_key_from_huawei_NCE"
 
 HUAWEI_ENGINE_ID = b"\x80\x00\x13\x70\x01\xc0\xa8\x2a\x05"
 

@@ -12,8 +12,8 @@ RESET = "\033[0m"
 SNMP_DB = {
     "host": "postgres",
     "dbname": "snmptraps",
-    "user": "snmpuser",
-    "password": "toor",
+    "user": "your_db_username",
+    "password": "your_db_password",
 }
 
 

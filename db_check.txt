@@ -1,1 +1,0 @@
- docker exec -it snmp_huawei_app python app/cli_db_docker.py
