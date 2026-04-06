@@ -1,0 +1,32 @@
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: snmp_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: snmptraps
+      POSTGRES_USER: snmpuser
+      POSTGRES_PASSWORD: toor
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./full_schema.sql:/docker-entrypoint-initdb.d/init.sql   # 👈 ADD THIS
+
+  snmp_app:
+    build: .
+    container_name: snmp_huawei_app
+    restart: always
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+    ports:
+      - "2323:2323/udp"
+    environment:
+      DB_HOST: postgres
+      DB_NAME: snmptraps
+      DB_USER: snmpuser
+      DB_PASSWORD: toor
+
+volumes:
+  postgres_data:

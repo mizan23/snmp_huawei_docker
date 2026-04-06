@@ -1,0 +1,7 @@
+🥉 Option 3: copy file manually (quick hack)
+
+docker cp app/cli_db_docker.py snmp_huawei_app:/app/app/cli_db_docker.py
+
+Then run:
+
+docker exec -it snmp_huawei_app python app/cli_db_docker.py
